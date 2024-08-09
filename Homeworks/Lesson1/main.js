@@ -35,4 +35,4 @@ console.log(typeof a, typeof b, typeof c);
 const fName = prompt('Enter your first name');
 const mName = prompt('Enter your middle name');
 const age = prompt('Enter your age');
-console.log(fName, mName, age)
+console.log(fName, mName, age);
