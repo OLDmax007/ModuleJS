@@ -64,6 +64,20 @@ const users = [
     { name: 'Dmitro', username: 'dmitro678', password: 'dmitro167' }
 ];
 
+console.log(
+    users[0].password,
+    users[1].password,
+    users[2].password,
+    users[3].password,
+    users[4].password,
+    users[5].password,
+    users[6].password,
+    users[7].password,
+    users[8].password,
+    users[9].password
+);
+
+
 const weeklyTemp = [
     { day: 'Monday', morning: 10, afternoon: 30, evening: 15 },
     { day: 'Tuesday', morning: 12, afternoon: 28, evening: 16 },
