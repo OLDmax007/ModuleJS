@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // 1
+    const numbersArray = [1, 2, 3, 4, 5];
+    const stringArray = ["apple", "banana", "cherry", "date", "fig"];
+    const mixedArray = ["hello", 42, true, "world", false];
+    console.log(numbersArray, stringArray, mixedArray);
+
+    // 2
+    const array = [];
+    array[0] = 1;
+    array[1] = "aaa";
+    array[2] = true;
+    array[3] = false;
+    array[4] = 100;
+    console.log(array)
+
+    // 3
+    const numbers = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18];
+
+    let i = 0;
+    while (i < numbers.length) {
+        i++;
+    }
+
+    for (let j = 0; j < numbers.length; j++) {
+    }
+
+    // odd
+    console.log("odd")
+    let i1 = 0;
+    while (i1 < numbers.length) {
+        if (i1 % 2 !== 0) {
+            console.log(numbers[i1]);
+        }
+        i1++;
+    }
+
+    console.log("")
+
+    for (let j = 0; j< numbers.length; j++) {
+        if (j % 2 !== 0) {
+            console.log(numbers[j]);
+        }
+    }
+
+    // even
+    console.log("even")
+    let i3 = 0;
+    while (i3 < numbers.length) {
+        if (i3 % 2 === 0) {
+            console.log(numbers[i3]);
+        }
+        i3++;
+    }
+
+    console.log("");
+
+    for (let j = 0; j < numbers.length; j++) {
+        if (j % 2 === 0) {
+            console.log(numbers[j]);
+        }
+    }
+
+    // continuing 3
+    for (let j = 0; j < numbers.length; j++) {
+        if (numbers[j] % 3 === 0) {
+            numbers[j] = 'okten';
+        }
+    }
+    console.log(numbers);
+
+    console.log('\nreverse array')
+    for (let j = numbers.length - 1; j >= 0; j--) {
+        console.log(numbers[j])
+    }
+
+    // 4
+    const books = [
+        {
+            title: "To Kill a Mockingbird",
+            pages: 281,
+            authors: ["Harper Lee"],
+            genres: ["Fiction", "Classic"]
+        },
+        {
+            title: "Pigs",
+            pages: 328,
+            authors: ["George Orwell"],
+            genres: ["Dystopian", "Science Fiction", "Political Fiction"]
+        },
+        {
+            title: "The Great Gatsby",
+            pages: 180,
+            authors: ["F. Scott Fitzgerald", "aaa"],
+            genres: ["Fiction", "Classic"]
+        },
+        {
+            title: "The Catcher in the Rye",
+            pages: 214,
+            authors: ["J.D. Salinger"],
+            genres: ["Fiction", "Classic", "Coming-of-Age"]
+        },
+        {
+            title: "Pride and Prejudice",
+            pages: 10,
+            authors: ["Jane Austen", "Pes"],
+            genres: ["Fiction", "Romance"]
+        }
+    ];
+
+    let maxLengthPages = books[0];
+    let maxLengthGenres = books[0];
+    let maxLengthTitle = books[0];
+    let singleAuthor = [];
+    let dualAuthors = [];
+
+    // const someBook = book[0];
+    for (const book of books) {
+        maxLengthPages = book.pages > maxLengthPages.pages ? book : maxLengthPages;
+        maxLengthGenres = book.genres.length > maxLengthGenres.genres.length ? book : maxLengthGenres;
+        maxLengthTitle = book.title.length > maxLengthTitle.title.length ? book : maxLengthTitle;
+        if (book.authors.length === 1) {
+            singleAuthor.push(book.title);
+        }
+        if (book.authors.length === 2) {
+            dualAuthors.push(book.title);
+        }
+    }
+
+    console.log(`\n${maxLengthPages.title} \n${maxLengthGenres.title} \n${maxLengthTitle.title} \n${singleAuthor} \n${dualAuthors}`)
+</script>
+</body>
+</html>

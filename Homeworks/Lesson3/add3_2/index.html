@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // 1
+    // a
+    let evenNumbers = [];
+    for (let i = 0; i <= 50; i += 2) {
+        evenNumbers.push(i);
+    }
+    console.log(evenNumbers);
+
+    // b
+    let oddNumbers = [];
+    for (let i = 1; i <= 50; i += 2) {
+        oddNumbers.push(i);
+    }
+    console.log(oddNumbers);
+
+    // c
+    const randomNumbers = [];
+    for (let i = 0; i < 20; i++) {
+        randomNumbers.push(Math.floor(Math.random() * 100));
+    }
+    console.log(randomNumbers)
+
+    const newRandomNumbers = [];
+    for (let i = 0; i < 20; i++) {
+        newRandomNumbers.push(Math.floor(Math.random() * 732) + 10);
+    }
+    console.log(newRandomNumbers)
+
+    // 2
+    for (let i = 2; i < newRandomNumbers.length; i += 3) {
+        console.log(newRandomNumbers[i])
+    }
+    //  3
+    console.log("")
+    for (let i = 2; i < newRandomNumbers.length; i += 3) {
+        if (newRandomNumbers[i] % 2 === 0) {
+            console.log(newRandomNumbers[i])
+        }
+    }
+    // 4
+    console.log("")
+    const arrayOddThirdNumbers = [];
+    for (let i = 2; i < newRandomNumbers.length; i += 3) {
+        if (newRandomNumbers[i] % 2 === 0) {
+            console.log(newRandomNumbers[i])
+            arrayOddThirdNumbers.push(newRandomNumbers[i])
+        }
+    }
+    // 5
+    console.log("")
+    const example = [1, 2, 3, 5, 7, 9, 56, 8, 67];
+    for (let i = 0; i < example.length; i++) {
+        if ((example[i + 1]) % 2 === 0) {
+            console.log(example[i]);
+        }
+
+    }
+
+    // 6
+    console.log("")
+    let count = 0;
+    const example2 = [100, 250, 50, 168, 120, 345, 188];
+    for (let i = 0; i < example2.length; i++) {
+        count += example2[i];
+    }
+    let middleCost = parseInt(count / example2.length);
+    console.log(middleCost);
+
+    // 7
+    const randomNums = [1, 4, 100, 50, 30, 20, 11, 3, 9, 344];
+    const newRandomNums = [];
+    for (let i = 0; i < randomNums.length; i++) {
+        newRandomNums.push(randomNums[i] * 5);
+    }
+    console.log(newRandomNums);
+
+    // 8
+    const arrayValues = [true, 1, 2, 3, false, "asas", "fddf"];
+    let newArrayValues = [];
+    for (const arrayValue of arrayValues) {
+        if (typeof arrayValue === 'number') {
+            newArrayValues.push(arrayValue);
+        }
+    }
+    console.log(newArrayValues);
+
+
+//     9
+    let usersWithId = [
+        {id: 1, name: 'vasya', age: 31, status: false},
+        {id: 2, name: 'petya', age: 30, status: true},
+        {id: 3, name: 'kolya', age: 29, status: true},
+        {id: 4, name: 'olya', age: 28, status: false}
+    ];
+
+    let citiesWithId = [
+        {user_id: 3, country: 'USA', city: 'Portland'},
+        {user_id: 1, country: 'Ukraine', city: 'Ternopil'},
+        {user_id: 2, country: 'Poland', city: 'Krakow'},
+        {user_id: 4, country: 'USA', city: 'Miami'}
+    ];
+
+    let usersWithCities = [];
+    for (let i = 0; i < usersWithId.length; i++) {
+       const user = usersWithId[i];
+       user.address = citiesWithId[i]
+       usersWithCities.push(user);
+    }
+    console.log(usersWithCities);
+// 10
+    console.log("")
+    arrayNums = [1,2,3,4,5,6,7,8,9,10];
+    for (const num of arrayNums) {
+        if (num % 2 === 0) {
+            console.log(num);
+        }
+    }
+// 11
+    console.log("")
+    newArrayNums = [];
+    for (const num of arrayNums) {
+        newArrayNums.push(num);
+    }
+    console.log(newArrayNums);
+
+//     12
+    const chars = [ 'a', 'b', 'c'];
+    let string1 = '';
+    let string2 = '';
+    let string3 = '';
+
+    for (let i = 0; i < chars.length; i++) {
+        string1 += chars[i];
+    }
+
+    for (const char of chars) {
+        string2 += char;
+    }
+
+    let i = 0;
+    while (i < chars.length) {
+        string3 += chars[i];
+        i++
+    }
+    console.log(string1, string2, string3);
+
+
+</script>
+</body>
+</html>
