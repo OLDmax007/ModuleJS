@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .info>div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: solid 1px;
+            font-size: 24px;
+            width: 20vw;
+            height: 30vh;
+        }
+    </style>
+</head>
+<body>
+<script>
+    let coursesArray = [
+        {
+            title: 'JavaScript Complex',
+            monthDuration: 5,
+            hourDuration: 909,
+            modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
+        },
+        {
+            title: 'Java Complex',
+            monthDuration: 6,
+            hourDuration: 909,
+            modules: ['html',
+                'css',
+                'js',
+                'mysql',
+                'mongodb',
+                'angular',
+                'aws',
+                'docker',
+                'git',
+                'java core',
+                'java advanced']
+        },
+        {
+            title: 'Python Complex',
+            monthDuration: 6,
+            hourDuration: 909,
+            modules: ['html',
+                'css',
+                'js',
+                'mysql',
+                'mongodb',
+                'angular',
+                'aws',
+                'docker',
+                'python core',
+                'python advanced']
+        },
+        {
+            title: 'QA Complex',
+            monthDuration: 4,
+            hourDuration: 909,
+            modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
+        },
+        {
+            title: 'FullStack',
+            monthDuration: 7,
+            hourDuration: 909,
+            modules: ['html',
+                'css',
+                'js',
+                'mysql',
+                'mongodb',
+                'react',
+                'angular',
+                'aws',
+                'docker',
+                'git',
+                'node.js',
+                'python',
+                'java']
+        },
+        {
+            title: 'Frontend',
+            monthDuration: 4,
+            hourDuration: 909,
+            modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
+        }
+    ];
+
+    coursesArray.forEach(course => {
+        const section = document.createElement('section');
+        section.classList.add('content');
+        document.body.appendChild(section);
+        for (const keyCourse in course) {
+            if (keyCourse === 'modules') {
+                const divModules = document.createElement('div');
+                divModules.classList.add(keyCourse);
+                const ul = document.createElement('ul')
+                course[keyCourse].forEach(item => {
+                    const li = document.createElement('li');
+                    li.innerText = `${item}`;
+                    ul.appendChild(li);
+                });
+                divModules.appendChild(ul);
+                section.appendChild(divModules);
+            } else  {
+                const div = document.createElement('div');
+                div.classList.add(`${keyCourse}`);
+                div.innerText = course[keyCourse];
+                section.appendChild(div);
+            }
+        }
+    })
+
+    const sectionInfo = document.createElement('section');
+    sectionInfo.classList.add('info');
+
+    const contents = ['asasdadsdaads', 'asdsadasdadsadssadasdads', 'dasdasdasasdadsadsasdads'];
+    contents.forEach(cont => {
+       const divInfo = document.createElement('div');
+       divInfo.innerText = cont;
+       sectionInfo.appendChild(divInfo);
+    })
+    document.body.prepend(sectionInfo);
+
+</script>
+</body>
+</html>
