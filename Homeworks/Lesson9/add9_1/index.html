@@ -7,21 +7,61 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
+
         .info {
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        .info>div {
+        .info > div {
+            width: 250px;
             border: solid 1px;
             font-size: 24px;
+        }
+
+        .info > div:nth-child(1) {
+            height: 500px;
+        }
+
+        .info > div:nth-child(2) {
+            height: 250px;
+        }
+
+        .info > div:nth-child(3) {
+            height: 100px;
+        }
+
+        .content {
+            border: 2px solid red;
+            margin-top: 20px;
+        }
+
+        .content div, li {
+            border: 1px blue solid;
+        }
+
+        .content > div {
+            margin: px;
+        }
+
+        .duration {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .month-duration {
+            width: 10vw;
+        }
+
+        .hour-duration {
+            width: 85vw;
         }
     </style>
 </head>
 <body>
 <script>
-<!--  1  -->
+    <!--  1  -->
     let coursesArray = [
         {
             title: 'JavaScript Complex',
@@ -95,66 +135,54 @@
         const section = document.createElement('section');
         section.classList.add('content');
         document.body.appendChild(section);
-        for (const keyCourse in course) {
-            if (keyCourse === 'modules') {
-                const divModules = document.createElement('div');
-                divModules.classList.add(keyCourse);
-                const ul = document.createElement('ul')
-                course[keyCourse].forEach(item => {
-                    const li = document.createElement('li');
-                    li.innerText = `${item}`;
-                    ul.appendChild(li);
-                });
-                divModules.appendChild(ul);
-                section.appendChild(divModules);
-            } else  {
-                const div = document.createElement('div');
-                div.classList.add(`${keyCourse}`);
-                div.innerText = course[keyCourse];
-                section.appendChild(div);
-            }
-        }
-    })
+
+        const titleDiv = document.createElement('div');
+        titleDiv.classList.add('title');
+        titleDiv.innerText = course.title;
+        section.appendChild(titleDiv);
+
+        const durationDiv = document.createElement('div');
+        durationDiv.classList.add('duration');
+
+        const monthDiv = document.createElement('div');
+        monthDiv.classList.add('month-duration');
+        monthDiv.innerText = course.monthDuration;
+
+        const hourDiv = document.createElement('div');
+        hourDiv.classList.add('hour-duration');
+        hourDiv.innerText = course.hourDuration;
+
+        durationDiv.append(monthDiv, hourDiv);
+        section.appendChild(durationDiv);
+
+        const modulesDiv = document.createElement('div');
+        modulesDiv.classList.add('modules');
+        const ul = document.createElement('ul');
+        course.modules.forEach(item => {
+            const li = document.createElement('li');
+            li.innerText = item;
+            ul.appendChild(li);
+        });
+        modulesDiv.appendChild(ul);
+        section.appendChild(modulesDiv);
+    });
+
     // 2
     const sectionInfo = document.createElement('section');
     sectionInfo.classList.add('info');
 
-    const contents = [`SOBAKA SOBAKA SOBAKA
-    SOBAKA SOBAKA SOBAKA
-    SOBAKA SOBAKA SOBAKA
-    SOBAKA SOBAKA SOBAKA
-    SOBAKA SOBAKA SOBAKA
-    SOBAKA SOBAKA SOBAKA
-    SOBAKA SOBAKA SOBAKA
-    SOBAKA SOBAKA SOBAKA
-    SOBAKA SOBAKA SOBAKA
-    SOBAKA SOBAKA SOBAKA
-    SOBAKA SOBAKA SOBAKA
-    SOBAKA SOBAKA SOBAKA
-    SOBAKA SOBAKA SOBAKA
-    SOBAKA SOBAKA SOBAKA
-    SOBAKA SOBAKA SOBAKA
-    SOBAKA SOBAKA SOBAKA
-    SOBAKA SOBAKA SOBAKA
-    `,
-        `asdsadasdadsadssadasdads asdsadasdadsadssadasdads asdsadasdadsadssadasdads
-         asdsadasdadsadssadasdads asdsadasdadsadssadasdads asdsadasdadsadssadasdads
-         asdsadasdadsadssadasdads asdsadasdadsadssadasdads asdsadasdadsadssadasdads
-         asdsadasdadsadssadasdads asdsadasdadsadssadasdads asdsadasdadsadssadasdads
-         asdsadasdadsadssadasdads asdsadasdadsadssadasdads asdsadasdadsadssadasdads
-         asdsadasdadsadssadasdads asdsadasdadsadssadasdads asdsadasdadsadssadasdads
-        `,
-        `PES PES PES
-        PES PES PES
-        PES PES PES
-        `];
-    contents.forEach(cont => {
-       const divInfo = document.createElement('div');
-       divInfo.innerText = cont;
-       sectionInfo.appendChild(divInfo);
-    })
-    document.body.prepend(sectionInfo);
+    contents = [
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus euismod, urna non commodo euismod, purus risus gravida felis, ut consequat turpis libero a nisi. Curabitur volutpat erat at nunc luctus, id interdum erat lacinia. Fusce nec enim ac augue dictum varius. Quisque.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus euismod, urna non commodo euismod, purus risus gravida.',
+        'Lorem ipsum dolor sit amet.'
+    ];
 
+    contents.forEach(cont => {
+        const divInfo = document.createElement('div');
+        divInfo.innerText = cont;
+        sectionInfo.appendChild(divInfo);
+    })
+    document.body.appendChild(sectionInfo);
 
     let max = 0;
     const divs = Array.from(document.querySelectorAll('.info>div'));
