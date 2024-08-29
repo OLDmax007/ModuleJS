@@ -34,8 +34,5 @@ let coursesAndDurationArray = [
     {title: 'FullStack', monthDuration: 7},
     {title: 'Frontend', monthDuration: 4}
 ];
-
 const newCoursesAndDurationArray = coursesAndDurationArray.map((course, index) => ({...course, id: index + 1}));
 console.log(newCoursesAndDurationArray)
-
-

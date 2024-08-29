@@ -11,22 +11,17 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 50px;
         }
 
         .info>div {
-            display: flex;
-            justify-content: center;
-            align-items: center;
             border: solid 1px;
             font-size: 24px;
-            width: 20vw;
-            height: 30vh;
         }
     </style>
 </head>
 <body>
 <script>
+<!--  1  -->
     let coursesArray = [
         {
             title: 'JavaScript Complex',
@@ -96,7 +91,6 @@
             modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
         }
     ];
-
     coursesArray.forEach(course => {
         const section = document.createElement('section');
         section.classList.add('content');
@@ -121,17 +115,53 @@
             }
         }
     })
-
+    // 2
     const sectionInfo = document.createElement('section');
     sectionInfo.classList.add('info');
 
-    const contents = ['asasdadsdaads', 'asdsadasdadsadssadasdads', 'dasdasdasasdadsadsasdads'];
+    const contents = [`SOBAKA SOBAKA SOBAKA
+    SOBAKA SOBAKA SOBAKA
+    SOBAKA SOBAKA SOBAKA
+    SOBAKA SOBAKA SOBAKA
+    SOBAKA SOBAKA SOBAKA
+    SOBAKA SOBAKA SOBAKA
+    SOBAKA SOBAKA SOBAKA
+    SOBAKA SOBAKA SOBAKA
+    SOBAKA SOBAKA SOBAKA
+    SOBAKA SOBAKA SOBAKA
+    SOBAKA SOBAKA SOBAKA
+    SOBAKA SOBAKA SOBAKA
+    SOBAKA SOBAKA SOBAKA
+    SOBAKA SOBAKA SOBAKA
+    SOBAKA SOBAKA SOBAKA
+    SOBAKA SOBAKA SOBAKA
+    SOBAKA SOBAKA SOBAKA
+    `,
+        `asdsadasdadsadssadasdads asdsadasdadsadssadasdads asdsadasdadsadssadasdads
+         asdsadasdadsadssadasdads asdsadasdadsadssadasdads asdsadasdadsadssadasdads
+         asdsadasdadsadssadasdads asdsadasdadsadssadasdads asdsadasdadsadssadasdads
+         asdsadasdadsadssadasdads asdsadasdadsadssadasdads asdsadasdadsadssadasdads
+         asdsadasdadsadssadasdads asdsadasdadsadssadasdads asdsadasdadsadssadasdads
+         asdsadasdadsadssadasdads asdsadasdadsadssadasdads asdsadasdadsadssadasdads
+        `,
+        `PES PES PES
+        PES PES PES
+        PES PES PES
+        `];
     contents.forEach(cont => {
        const divInfo = document.createElement('div');
        divInfo.innerText = cont;
        sectionInfo.appendChild(divInfo);
     })
     document.body.prepend(sectionInfo);
+
+
+    let max = 0;
+    const divs = Array.from(document.querySelectorAll('.info>div'));
+    divs.forEach(div => {
+        max = div.clientHeight > max ? div.clientHeight : max;
+    })
+    divs.forEach(div => div.style.height = max + 'px');
 
 </script>
 </body>
