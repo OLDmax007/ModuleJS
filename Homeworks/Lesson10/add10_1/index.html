@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div class="price-block">100 грн</div>
+
+<script>
+    const priceBlock = document.querySelector('.price-block');
+    let price = parseInt(localStorage.getItem('price')) || 100;
+    console.log(price)
+    setTimeout(() => {
+        price += 10;
+        localStorage.setItem('price', price.toString());
+        priceBlock.innerText = price;
+    },10000)
+
+</script>
+
+</body>
+</html>
