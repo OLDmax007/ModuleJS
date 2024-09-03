@@ -12,14 +12,15 @@
 
 <script>
     const priceBlock = document.querySelector('.price-block');
+    const startTime = Date.now();
     let price = parseInt(localStorage.getItem('price')) || 100;
-    priceBlock.innerText = `${price} грн`;
-    setTimeout(() => {
+    const lastTime = parseInt(localStorage.getItem('lastTime')) || 0
+    if (startTime - lastTime > 10000) {
         price += 10;
         localStorage.setItem('price', price.toString());
-        priceBlock.innerText = `${price} грн`;
-    }, 10000)
-
+        localStorage.setItem('lastTime', startTime.toString());
+    }
+    priceBlock.innerText = `${price} грн`;
 </script>
 
 </body>
