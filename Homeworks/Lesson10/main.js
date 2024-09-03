@@ -33,9 +33,11 @@ buttonShowInfo.onclick = function () {
 }
 
 // 4 #2VaLt4vDczH
+const counterShow = document.querySelector('.counter')
 let counter = sessionStorage.getItem('number') || 0;
 counter++;
 sessionStorage.setItem('number', counter);
+counterShow.innerText = counter;
 
 // 6 #Jg0gPO00
 const conventor = document.querySelector('.conventor');
