@@ -21,8 +21,16 @@ fetch(url)
                         const productsList = document.createElement('ul');
                         for (const keyProduct in product) {
                             const liElmProduct = document.createElement('li');
-                            liElmProduct.innerText = `${keyProduct}: ${product[keyProduct]}`;
-                            productsList.appendChild(liElmProduct);
+                            if (keyProduct === 'thumbnail') {
+                               const img =  document.createElement('img');
+                               img.src = product[keyProduct];
+                               liElmProduct.style.listStyle = 'none';
+                               liElmProduct.appendChild(img);
+                               productsList.appendChild(liElmProduct);
+                            } else {
+                                liElmProduct.innerText = `${keyProduct}: ${product[keyProduct]}`;
+                                productsList.appendChild(liElmProduct);
+                            }
                         }
                         liProducts.appendChild(productsList);
                     })
@@ -46,6 +54,9 @@ fetch(url2)
         data.recipes.forEach((recip, index) => {
             const h2 = document.createElement('h2');
             h2.innerText = recip.name;
+            const imgRecp = document.createElement('img');
+            imgRecp.src = recip.image;
+            imgRecp.style.width = '200px'
             console.log(`---------${index+1}---------`)
             for (const recipKey in recip) {
                 console.log(recipKey + ':' ,recip[recipKey])
@@ -57,6 +68,7 @@ fetch(url2)
                         listIngs.appendChild(liIng);
                     })
                     recipes.appendChild(h2);
+                    recipes.appendChild(imgRecp)
                     recipes.appendChild(listIngs);
                 }
             }
